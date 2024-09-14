@@ -5,6 +5,13 @@ This repository is the companion code to the papers *Primordial Stochastic Gravi
 
 ## Mathematica
 
+The Bogoliubov coefficients for two and three fields are stored in the `*.wl` files. The files with `*Small*` in the name correspond to the branch of solutions with \( {\cal M}_{ss,0}, {\cal M}_{bb,0} \leq 9/4 \), while the other files are the branch with larger constant masses. Each file contains two variables
+
+  - `regIIIcoeffsSimp`: these are the Bogoliubov coefficients of the sharp feature's excited state
+  - `αsols`: the WKB exponents during the feature are \( \pm \sqrt{\alpha_i} \). 
+
+Example usage and plots reproducing many of the figures of our work are available in `bog_plotting_clean.nb`.
+
 ## Julia
 
 
