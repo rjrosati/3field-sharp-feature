@@ -11,7 +11,7 @@ The Bogoliubov coefficients for two and three fields are stored in the `*.wl` fi
 
   - `regIIIcoeffsSimp`: these are the Bogoliubov coefficients of the sharp feature's excited state
   - `αsols`: the WKB exponents during the feature are $` \pm \sqrt{\alpha_i} `$.
-  - 
+
 Not discussed in the papers but also included here are the two-field Bogoliubov coefficients including a constant contribution to the entropic mass. These should match the $` \tau \rightarrow 0 `$ limit of the $`(\zeta, s)`$ 2$`\times`$2 block of the three-field coefficients.
 
 ## Julia
