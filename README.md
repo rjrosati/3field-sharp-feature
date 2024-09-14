@@ -1,7 +1,7 @@
 This repository is the companion code to the papers *Primordial Stochastic Gravitational Wave Backgrounds from a Sharp Feature in Three-field Inflation* ([I](https://arxiv.org/abs/2304.00065) and II), by Vikas Aragam, Sonia Paban, and Robert Rosati.
 
 
-# Installation
+# Quick start
 
 ## Mathematica
 
