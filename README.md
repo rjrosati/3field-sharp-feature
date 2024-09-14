@@ -3,6 +3,8 @@ This repository is the companion code to the papers *Primordial Stochastic Gravi
 
 # Installation
 
+First clone the repo.
+
 ## Mathematica
 
 The Bogoliubov coefficients for two and three fields are stored in the `*.wl` files. The files with `*Small*` in the name correspond to the branch of solutions with \( {\cal M}_{ss,0}, {\cal M}_{bb,0} \leq 9/4 \), while the other files are the branch with larger constant masses. Each file contains two variables
@@ -14,6 +16,69 @@ Example usage and plots reproducing many of the figures of our work are availabl
 
 ## Julia
 
+
+### Installing Julia
+
+First [install Julia](https://julialang.org/downloads/), then clone this repo.
+Open a terminal in the cloned repo's folder.
+
+As a small aside, the Julia workflow is a little different than python -- because Julia uses just-in-time compilation, you'll avoid excessive recompilation if you leave a julia REPL running between editing and rerunning code.
+
+### Activating the environment
+
+Next we'll want to activate the environment in this folder
+```julia-repl
+julia> import Pkg; Pkg.activate(".")
+```
+(as a shortcut, you can also press the `]` key and type `activate .`).
+
+### Instantiating the environment
+The first time you run this, you'll also need install the dependencies and precompile them (you only have to do this once):
+```julia-repl
+julia> Pkg.instantiate()
+```
+This will take a little while.
+
+Then you'll be able to run the codes here.
+
+### How to run
+Each time you re-open Julia, you'll need to [reactivate the environment](#activating-the-environment) in this folder before running any of the codes.
+Then you can load the codes with
+
+```julia-repl
+julia> include("bog_plotting_minimal.jl")
+```
+to generate a few plots interactively.
+The code is organized around handling the description of the synthetic background in a `SyntheticModelspec`, defined as
+```julia
+	@with_kw struct SyntheticModelspec
+		d::Int = 3
+		feature_at::Float64 =23.0 # e-folds before the end of inflation
+		feature_fwhm::Float64=0.25
+		efolds::Float64 = 80.0
+		ϵ::Float64=0.01
+		Mss_ratio::Float64 =-3.0 # Mss/(Ω^2+τ^2)
+		Mss_const::Float64=  0.0 # H^2
+		Ω::Float64=1.0
+		τ::Float64=1.0
+		Msb_ratio::Float64= 0.0  # Msb/τ
+		Msb_const::Float64= 0.0  # H^2
+		Mbb_ratio::Float64= 1.0  # Mbb/τ^2
+		Mbb_const::Float64= 0.0 # H^2
+		Hinit::Float64 = 1e-4
+	end
+```
+The functions `get_all_bogoliubov_mass(κ,sms::SyntheticModelspec)`, `analyticPz(κ,sms::SyntheticModelspec)`, etc, all take a `SyntheticModelspec` and return the quantities of interest. Please see the examples in `bog_plotting_minimal.jl`.
+
+Alternatively, you can start a notebook-style interface with
+```julia-repl
+julia> import Pluto; Pluto.run()
+```
+and selecting `bog_plotting_pluto.jl` in your browser.
+
+Pluto is a little different than Jupyter notebooks or Mathematica in that it is *stateless*, so changing a variable in one part of the notebook changes it in all parts of the notebook, and the order of the cells doesn't matter.
+
+See https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%94%8E-Basic-Commands-in-Pluto for some basic how-to's with Pluto notebooks.
 
 # Citations
 If these results are useful to you, please cite the corresponding papers :)
