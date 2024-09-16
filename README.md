@@ -70,7 +70,7 @@ The code is organized around handling the description of the synthetic backgroun
 		Hinit::Float64 = 1e-4
 	end
 ```
-The functions `get_all_bogoliubov_mass(κ,sms::SyntheticModelspec)`, `analyticPz(κ,sms::SyntheticModelspec)`, etc, all take a `SyntheticModelspec` and return the quantities of interest. Please see the examples in `bog_plotting_minimal.jl`. For now, all of the Bogoliubov coefficients in Julia are the branch that allows for $`0 < M_0 < 9/4`$.
+The functions `get_all_bogoliubov_mass(κ,sms::SyntheticModelspec)`, `analyticPz(κ,sms::SyntheticModelspec)`, etc, all take a `SyntheticModelspec` and return the quantities of interest. Please see the examples in `bog_plotting_minimal.jl`. For now, all of the Bogoliubov coefficients in Julia are the branch that allows for $`0 < M_0 < 9/4`$. They are source-to-source translations of the Mathematica results using https://github.com/rjrosati/mathematica2julia
 
 Alternatively, you can start a notebook-style interface with
 ```julia-repl
