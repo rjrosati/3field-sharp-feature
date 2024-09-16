@@ -100,7 +100,7 @@ If these results are useful to you, please cite the corresponding papers :)
     year = "2023"
 }
 
-@article{Aragam:2023adu,
+@article{Aragam:2024,
     author = "Aragam, Vikas and Paban, Sonia and Rosati, Robert",
     title = "{Primordial stochastic gravitational wave backgrounds from a sharp feature in three-field inflation. Part~II. The inflationary era}",
     eprint = "2409.09023",
